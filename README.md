@@ -6,6 +6,14 @@ A Unity sample project demonstrating how to integrate the Gamers client SDK.
 
 This project provides a simple UI-driven demo for authenticating users, joining tournaments and events, and displaying leaderboards via the `Gamers.Client.Samples` integration.
 
+## Prebuilt Demo Apps
+
+Prebuilt application packages are included in the repository root:
+
+- **`UnityGamersDemoAndroidApp.zip`** — Android build of the demo.
+- **`UnityGamersDemoMacApp.zip`** — macOS build of the demo.
+- **`UnityGamersDemoWindowsApp.zip`** — Windows build of the demo.
+
 ## Main Components
 
 - **`GamersButtonBridge.cs`** — Connects UI input fields to `ReferenceIntegration` for:
