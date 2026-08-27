@@ -13,6 +13,7 @@ Prebuilt application packages are included in the repository root:
 - **`UnityGamersDemoAndroidApp.zip`** — Android build of the demo.
 - **`UnityGamersDemoMacApp.zip`** — macOS build of the demo.
 - **`UnityGamersDemoWindowsApp.zip`** — Windows build of the demo.
+- **`UnityGamersDemoiOSApp.zip`** — iOS build of the demo.
 
 ## Main Components
 
