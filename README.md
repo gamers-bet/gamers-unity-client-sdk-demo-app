@@ -25,12 +25,15 @@ The demo uses **`WebSocketTransport`** (from the `Gamers Client Helper` sample p
 - Server reply routing for auth, event/tournament join results, leaderboard snapshots, and errors
 - Automatic dispatch of the WebSocket message queue
 
-## Requirements
-
-- Unity 6000.x or later
-- `Gamers.Client.Samples` package
-- TextMeshPro
 
 ## Usage
 
 Open the project in Unity, load the sample scene, and use the on-screen inputs to interact with the Gamers integration. The `ReferenceIntegration` component communicates with the backend through the `WebSocketTransport` sample.
+
+## SDK Integration
+
+1. Add the `com.gamers.client` package to your Unity project via Package Manager (`Window > Package Manager > Add package from git URL...`).
+2. Provide an `IGamersTransport` implementation — use the included `WebSocketTransport` and set its `Url` and optional `Player Id Header` in the Inspector, or implement your own transport.
+3. Create a `GamersClientFlow` with the transport, optionally setting `RequestTimeout`.
+4. Subscribe to the flow events (`OnAuthCodeRequested`, `OnAuthenticated`, `OnTournamentJoined`, `OnEventJoined`, `OnLeaderboardUpdated`, `OnError`) and call the async methods (`RequestAuthAsync`, `SubmitCodeAsync`, `JoinTournamentAsync`, `JoinEventAsync`, `RequestLeaderboardAsync`).
+5. The included `ReferenceIntegration` component is a sample MonoBehaviour that demonstrates this setup in `Start`.
