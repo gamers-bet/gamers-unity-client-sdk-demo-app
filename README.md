@@ -6,6 +6,14 @@ A Unity sample project demonstrating how to integrate the Gamers client SDK.
 
 This project provides a simple UI-driven demo for authenticating users, joining tournaments and events, and displaying leaderboards via the `Gamers.Client.Samples` integration.
 
+## Compatibility
+
+- **Unity:** 2022.3 LTS or later
+- **Supported platforms:** Windows, macOS, Android, and iOS
+- **Package:** `com.gamers.client`
+
+The SDK is designed for Unity projects that integrate with the Gamers.bet platform for user authentication, paid tournament and event entry, and leaderboard functionality.
+
 ## Prebuilt Demo Apps
 
 Prebuilt application packages are included in the repository root:
@@ -39,7 +47,7 @@ The demo uses **`WebSocketTransport`** (from the `Gamers Client Helper` sample p
 
 Open the project in Unity, load the sample scene, and use the on-screen inputs to interact with the Gamers integration. The `ReferenceIntegration` component communicates with the backend through the `WebSocketTransport` sample.
 
-## SDK Integration
+## Installation & Getting Started
 
 1. Add the `com.gamers.client` package to your Unity project via Package Manager (`Window > Package Manager > Add package from git URL...`).
 2. Provide an `IGamersTransport` implementation — use the included `WebSocketTransport` and set its `Url` and optional `Player Id Header` in the Inspector, or implement your own transport.
