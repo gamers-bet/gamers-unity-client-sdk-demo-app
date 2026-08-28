@@ -54,3 +54,7 @@ Open the project in Unity, load the sample scene, and use the on-screen inputs t
 3. Create a `GamersClientFlow` with the transport, optionally setting `RequestTimeout`.
 4. Subscribe to the flow events (`OnAuthCodeRequested`, `OnAuthenticated`, `OnTournamentJoined`, `OnEventJoined`, `OnLeaderboardUpdated`, `OnError`) and call the async methods (`RequestAuthAsync`, `SubmitCodeAsync`, `JoinTournamentAsync`, `JoinEventAsync`, `RequestLeaderboardAsync`).
 5. The included `ReferenceIntegration` component is a sample MonoBehaviour that demonstrates this setup in `Start`.
+
+## Verified Solutions Attribution
+
+This project uses the Unity Verified Solutions Attribution integration included with the `com.gamers.client` package. For implementation details, privacy, and verification steps, see [unity-verified-solutions-attribution.md](unity-verified-solutions-attribution.md).
