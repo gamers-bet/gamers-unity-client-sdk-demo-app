@@ -2,8 +2,8 @@
 
 Transport-agnostic Unity client helper for the Gamers server-authoritative integration. Supports Unity 2022.3 LTS or newer, targeting Windows, macOS, Android and iOS.
 
-- [Integration guide](Documentation~/integration-guide.md)
-- [C# API reference](Documentation~/api-reference.md)
+- [Integration guide](integration-guide.md)
+- [C# API reference](api-reference.md)
 - [Changelog](CHANGELOG.md)
 
 ## Architecture
@@ -110,7 +110,7 @@ the awaited value is the real outcome. Three rules follow:
 - **Replies with no correlation id are treated as unsolicited server pushes** and raised through the
   matching event — `OnLeaderboardUpdated`, `OnError`, and so on.
 
-See `Documentation~/integration-guide.md` for a complete transport example and message reference.
+See `integration-guide.md` for a complete transport example and message reference.
 
 ## What is in this package?
 
@@ -163,7 +163,7 @@ Android is supported as a 64-bit (ARM64) target. Use the IL2CPP scripting backen
 
 ## Developer documentation
 
-`Documentation~/integration-guide.md` is the canonical integration guide. The complete C# reference is bundled at `Documentation~/api-reference.md`. Keep both files and `CHANGELOG.md` synchronized with every public API change.
+`integration-guide.md` is the canonical integration guide. The complete C# reference is bundled at `api-reference.md`. Keep both files and `CHANGELOG.md` synchronized with every public API change.
 
 ## License
 
