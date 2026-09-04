@@ -8,7 +8,7 @@
       "hash": "ea014c9ae534d56111962d96f89f8a046e302dc9"
     },
     "com.gamers.client": {
-      "version": "file:../com.gamers.client-0.5.0.tgz",
+      "version": "file:../com.gamers.client-1.0.0.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {
