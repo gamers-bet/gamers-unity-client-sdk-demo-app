@@ -155,6 +155,10 @@ A complete, UI-driven sample project is available at [`gamers-bet/gamers-unity-c
 - 64-bit Android, iOS, Windows, and macOS
 - A developer-owned game-server and `IGamersTransport` implementation
 
+### External dependency (demo only)
+
+The demo project's `WebSocketTransport` uses `com.endel.nativewebsocket` from GitHub. The `com.gamers.client` package does not require it. See [external-dependency-guide.md](external-dependency-guide.md) for details.
+
 ## IL2CPP and Android
 
 The package ships a `link.xml` that preserves the `GamersClient.Runtime` and `GamersClient.Samples` assemblies. This prevents IL2CPP's managed code stripping (Medium/High) from removing Json.NET property setters on the message and model types.

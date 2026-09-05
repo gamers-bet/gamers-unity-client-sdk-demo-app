@@ -8,21 +8,13 @@ using Gamers.Client;
 
 public class WebSocketTransport : MonoBehaviour, IGamersTransport
 {
+    // Replace this with your own game-server WebSocket URL.
     [SerializeField] private string _url = "wss://reference-server-dev-internal-testing.up.railway.app/ws/gamers";
     [SerializeField] private string _playerIdHeader;
 
     public event Action<GamersServerReply> ReplyReceived;
 
     private WebSocket _ws;
-
-    private void Awake()
-    {
-#if !UNITY_WEBGL || UNITY_EDITOR
-        // Bypass Mono TLS SSL validation issues for WSS connections in Unity Editor / Standalone
-        System.Net.ServicePointManager.ServerCertificateValidationCallback = 
-            (sender, certificate, chain, sslPolicyErrors) => true;
-#endif
-    }
 
     private async void Start()
     {

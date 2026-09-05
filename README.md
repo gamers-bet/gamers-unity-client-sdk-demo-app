@@ -42,6 +42,15 @@ The demo uses **`WebSocketTransport`** (from the `Gamers Client Helper` sample p
 - Server reply routing for auth, event/tournament join results, leaderboard snapshots, and errors
 - Automatic dispatch of the WebSocket message queue
 
+### External dependency
+
+The WebSocket transport uses `com.endel.nativewebsocket` from GitHub. Install it via **Window → Package Manager → + → Add package from git URL...** with:
+
+```
+https://github.com/endel/NativeWebSocket.git#upm
+```
+
+The `com.gamers.client` package itself does not require this package. See [external-dependency-guide.md](external-dependency-guide.md) for details.
 
 ## Usage
 
