@@ -4,7 +4,7 @@ Transport-agnostic Unity client helper for the Gamers server-authoritative integ
 
 - [Integration guide](integration-guide.md)
 - [C# API reference](api-reference.md)
-- [Changelog](CHANGELOG.md)
+- Changelog: `CHANGELOG.md`, bundled in the `com.gamers.client` package
 
 ## Architecture
 
@@ -136,13 +136,15 @@ This package is distributed in UPM format through the Unity Asset Store. UPM res
 
 Open the Package Manager window, select the Gamers Client Helper package, and import the sample:
 
-- **Reference Integration** — example `MonoBehaviour` wired to a fake transport
+- **Reference Integration** — `ReferenceIntegration.cs`, an example `MonoBehaviour` that drives the full flow, plus `ReferenceTransport.cs`, a mock `IGamersTransport` that logs outgoing JSON and simulates replies so you can exercise the API without a game-server
+
+The sample deliberately ships no real networking code. Supplying a production transport is your responsibility; the demo app below shows one way to do it over WebSockets.
 
 ## Demo app
 
 A complete, UI-driven sample project is available at [`gamers-bet/gamers-unity-client-sdk-demo-app`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app). The repository includes:
 
-- A sample scene wired to a `WebSocketTransport`
+- A sample scene wired to `WebSocketTransport`, a demo-only `IGamersTransport` implementation that is not part of this package
 - Prebuilt app packages for Windows, macOS, Android, and iOS
 - Step-by-step install and usage instructions
 
@@ -157,7 +159,7 @@ A complete, UI-driven sample project is available at [`gamers-bet/gamers-unity-c
 
 ### External dependency (demo only)
 
-The demo project's `WebSocketTransport` uses `com.endel.nativewebsocket` from GitHub. The `com.gamers.client` package does not require it. See [external-dependency-guide.md](external-dependency-guide.md) for details.
+The demo project's `WebSocketTransport` uses `com.endel.nativewebsocket` from GitHub. The `com.gamers.client` package does not require it. See the demo project [README](../README.md#external-dependency) for install instructions.
 
 ## IL2CPP and Android
 
@@ -171,4 +173,4 @@ Android is supported as a 64-bit (ARM64) target. Use the IL2CPP scripting backen
 
 ## License
 
-See `LICENSE.pdf` in this package for the End User License Agreement.
+See [`LICENSE.pdf`](../LICENSE.pdf) for the End User License Agreement.

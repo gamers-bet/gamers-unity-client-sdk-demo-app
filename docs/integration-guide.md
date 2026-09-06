@@ -7,7 +7,7 @@ Client-to-server protocol version: `1`
 The **Gamers Client Helper** is a transport-agnostic Unity package for a server-authoritative Gamers integration. It provides five awaitable player operations, typed message contracts, a state machine, error handling, and read-only display models.
 
 - [C# API reference](api-reference.md)
-- [Changelog](../CHANGELOG.md)
+- Changelog: `CHANGELOG.md`, bundled in the `com.gamers.client` package
 
 ## 1. Requirements
 
@@ -89,7 +89,7 @@ If Gamers supplies a `.tgz` package, import it through **Package Manager → Add
 
 ### Demo app
 
-A complete, UI-driven sample project is available at [`gamers-bet/gamers-unity-client-sdk-demo-app`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app). It includes a sample scene, a `WebSocketTransport` reference implementation, and prebuilt app packages for Windows, macOS, Android, and iOS.
+A complete, UI-driven sample project is available at [`gamers-bet/gamers-unity-client-sdk-demo-app`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app). It includes a sample scene, a `WebSocketTransport` reference implementation that lives in the demo repository rather than in this package, and prebuilt app packages for Windows, macOS, Android, and iOS.
 
 ## 5. Required game-server protocol
 

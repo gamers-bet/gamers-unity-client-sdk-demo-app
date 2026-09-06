@@ -7,7 +7,7 @@ Protocol version: `1`
 
 This reference documents every public type intended for use in the Gamers Unity client package. The package is a transport-agnostic helper for a server-authoritative integration. It never calls the Gamers Game API, stores a player JWT, or contains a Game API key.
 
-For installation, architecture, compatibility, examples, limitations, and known issues, see the [integration guide](integration-guide.md). See the package-root [changelog](../CHANGELOG.md) for version history.
+For installation, architecture, compatibility, examples, limitations, and known issues, see the [integration guide](integration-guide.md). See the package-root `CHANGELOG.md`, bundled in the `com.gamers.client` package, for version history.
 
 ## 1. API conventions
 
