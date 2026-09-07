@@ -68,7 +68,7 @@ Open the project in Unity, load the sample scene, and use the on-screen inputs t
 
 ## Installation & Getting Started
 
-1. Add the `com.gamers.client` package to your Unity project via Package Manager (`Window > Package Manager > Add package from git URL...`).
+1. Add the [`com.gamers.client`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app/raw/main/com.gamers.client-1.0.0.tgz) package to your Unity project via Package Manager (`Window > Package Manager > Add package from git URL...`).
 2. Provide an `IGamersTransport` implementation — write your own, or copy this demo's `WebSocketTransport` and set its `Url` and optional `Player Id Header` in the Inspector. The package's own sample ships `ReferenceTransport`, a mock transport intended for local experimentation rather than production use.
 3. Create a `GamersClientFlow` with the transport, optionally setting `RequestTimeout`.
 4. Subscribe to the flow events (`OnAuthCodeRequested`, `OnAuthenticated`, `OnTournamentJoined`, `OnEventJoined`, `OnLeaderboardUpdated`, `OnError`) and call the async methods (`RequestAuthAsync`, `SubmitCodeAsync`, `JoinTournamentAsync`, `JoinEventAsync`, `RequestLeaderboardAsync`).
