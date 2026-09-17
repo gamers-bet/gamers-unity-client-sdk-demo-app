@@ -37,10 +37,9 @@ Their metadata is preserved. If your project already has TMP Essentials, retain
 one copy of each asset/GUID when importing. The Liberation Sans license is in
 `Text/Fonts/LiberationSans - OFL.txt`.
 
-## Editing and rebuilding
+## Editing the sample
 
-In the demo repository, edit this imported sample and run
-`node scripts/package-client.mjs` from the repository root. It copies the entire
-sample into `PackageSource/com.gamers.client/Samples~/ReferenceIntegration` and
-rebuilds `com.gamers.client-1.0.0.tgz`. Keep every asset's `.meta` file when moving
-it so scene and button references survive.
+Edit the imported sample in your project's `Assets` folder. Keep every asset's
+`.meta` file when moving it so scene and button references survive. These edits
+do not modify the SDK tarball. Reimporting the sample restores the bundled
+version and can overwrite local edits; preserve your changes before reimporting.

@@ -54,7 +54,7 @@ The runtime SDK does not require NativeWebSocket; install it before importing th
 
 The main package ships the complete **Reference Integration** sample: scene, UI scripts, WebSocket transport, logo, input actions and required font resources. `ReferenceTransport` remains available for mock examples; the included scene uses `WebSocketTransport`.
 
-The editable demo lives at `Assets/Samples/Gamers Client Helper/1.0.0/Reference Integration/`. Run `node scripts/package-client.mjs` to synchronize it into `PackageSource/com.gamers.client/Samples~/ReferenceIntegration` and rebuild the tarball. Reimporting the rebuilt sample preserves the complete demo.
+The editable demo lives at `Assets/Samples/Gamers Client Helper/1.0.0/Reference Integration/`. The SDK is supplied as `com.gamers.client-1.0.0.tgz`, which includes its C# source, documentation, and Reference Integration sample. This repository does not include package build tooling. Reimporting the sample restores the version bundled in the tarball and can overwrite local sample edits.
 
 See the [sample README](Assets/Samples/Gamers%20Client%20Helper/1.0.0/Reference%20Integration/README.md) for dependency setup. The SDK retains its Unity 2022.3 minimum; the bundled scene was authored in Unity 6000.4.9f1.
 
