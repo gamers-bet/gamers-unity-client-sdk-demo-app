@@ -45,10 +45,11 @@ If Gamers supplies a `.tgz` package, import it through **Package Manager → Add
 
 ## Quick start
 
-Implement `IGamersTransport` using your game's networking layer, then use `GamersClientFlow`:
+Implement `IGamersTransport` using your game's networking layer, then use `GamersClientFlow`. `MyNetworkTransport` below is a placeholder for your implementation; the snippet requires that class to compile.
 
 ```csharp
 using Gamers.Client;
+using System;
 using UnityEngine;
 
 public class GamersExample : MonoBehaviour
@@ -107,10 +108,12 @@ the awaited value is the real outcome. Three rules follow:
   affecting a newer request.
 - **Failures throw** `GamersClientException` (with `Code`, `Message`, `Retryable`). A game-server that
   never answers throws `TimeoutException` after `RequestTimeout`, which defaults to 30 seconds.
-- **Replies with no correlation id are treated as unsolicited server pushes** and raised through the
-  matching event — `OnLeaderboardUpdated`, `OnError`, and so on.
+- **Replies with a missing or no-longer-pending correlation id are treated as server pushes.**
+  This includes late or duplicate replies: they cannot complete another request, but can still
+  raise events and update shared state or current competition identifiers. Filter unwanted
+  duplicates and stale replies in your transport before raising `ReplyReceived`.
 
-See `Documentation~/integration-guide.md` for a complete transport example and message reference.
+See `Documentation~/integration-guide.md` for a transport implementation outline and message reference.
 
 ## What is in this package?
 

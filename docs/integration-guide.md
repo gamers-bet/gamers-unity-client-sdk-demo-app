@@ -114,9 +114,13 @@ The game-server must follow these rules:
 
 A missing terminal reply becomes `TimeoutException`. A duplicate or late reply cannot complete a newer request. A mismatched reply type becomes `GamersClientException` with code `PROTOCOL_MISMATCH`. A version other than `1` becomes `UNSUPPORTED_PROTOCOL_VERSION`.
 
+Replies with a missing or no-longer-pending correlation identifier are handled as server pushes, including late replies and duplicates. They can still raise events. Successful authentication and join pushes can also update `State`, `CurrentEventId`, or `CurrentTournamentId`; error pushes can set `State` to `Error`. Filter unwanted duplicates and stale replies in your transport before raising `ReplyReceived`.
+
 ## 6. Implement `IGamersTransport`
 
 The package does not choose a networking stack. Implement `IGamersTransport` with Netcode for GameObjects, Mirror, Photon, WebSockets, REST, or the game's existing client/server channel.
+
+The following outline requires application-specific helpers and does not compile unchanged. Replace `MyGameServerConnection.SendAsync(string, CancellationToken)` with your connection's send operation, and implement `RunOnUnityMainThread(Action)` using your main-thread dispatcher. Validate incoming JSON and handle malformed or unknown messages in your transport before using it in production. For the bundled WebSocket implementation and setup steps, see `Samples~/ReferenceIntegration/README.md` inside the package.
 
 ```csharp
 using Gamers.Client;
@@ -170,6 +174,8 @@ If networking callbacks run on a background thread, `RunOnUnityMainThread` must 
 ## 7. Use `GamersClientFlow`
 
 Create one flow for the relevant client session, subscribe to optional notifications, and dispose it when the scene or session ends.
+
+This example also requires your `MyNetworkTransport` implementation and three UI helpers: `UpdateLeaderboardUi(LeaderboardSnapshotReply)`, `ShowCodeEntry(string email)`, and `ShowError(string message)`. Implement these methods in `GamersExample` to update your UI; they are placeholders, not SDK methods. Handle transport-specific exceptions according to your connection's error policy.
 
 ```csharp
 using Gamers.Client;
