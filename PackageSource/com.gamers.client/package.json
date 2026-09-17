@@ -1,0 +1,47 @@
+{
+  "name": "com.gamers.client",
+  "version": "1.0.0",
+  "displayName": "Gamers Client Helper",
+  "description": "Transport-agnostic Unity client helper for the Gamers server-authoritative integration. Game clients talk to the developer's game-server; the game-server talks to the Gamers Game API.",
+  "category": "Tools",
+  "files": [
+    "Runtime/**/*",
+    "Editor/**/*",
+    "Samples~/**/*",
+    "Documentation~/**/*",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE.pdf",
+    "Third Party Notices.md",
+    "link.xml",
+    "package.json.meta",
+    "Runtime.meta",
+    "Editor.meta",
+    "README.md.meta",
+    "CHANGELOG.md.meta",
+    "LICENSE.pdf.meta",
+    "Third Party Notices.md.meta",
+    "link.xml.meta"
+  ],
+  "unity": "2022.3",
+  "unityRelease": "0",
+  "license": "SEE LICENSE IN LICENSE.pdf",
+  "documentationUrl": "https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app/blob/main/README.md",
+  "changelogUrl": "https://developer.gamers.dev/docs/client-sdk-changelog",
+  "keywords": ["gamers", "client", "events", "tournaments"],
+  "author": {
+    "name": "Gamers",
+    "email": "support@gamers.dev",
+    "url": "https://gamers.dev"
+  },
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1"
+  },
+  "samples": [
+    {
+      "displayName": "Reference Integration",
+      "description": "Complete UI demo with scene, WebSocket transport, input actions and font resources. See the sample README for required sample dependencies.",
+      "path": "Samples~/ReferenceIntegration"
+    }
+  ]
+}

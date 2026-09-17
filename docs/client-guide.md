@@ -136,15 +136,17 @@ This package is distributed in UPM format through the Unity Asset Store. UPM res
 
 Open the Package Manager window, select the Gamers Client Helper package, and import the sample:
 
-- **Reference Integration** — `ReferenceIntegration.cs`, an example `MonoBehaviour` that drives the full flow, plus `ReferenceTransport.cs`, a mock `IGamersTransport` that logs outgoing JSON and simulates replies so you can exercise the API without a game-server
+- **Reference Integration** — complete UI demo with scene, WebSocket transport, UI scripts, logo, input actions and required font resources; `ReferenceTransport` is also included for mock examples.
 
-The sample deliberately ships no real networking code. Supplying a production transport is your responsibility; the demo app below shows one way to do it over WebSockets.
+The included scene uses `WebSocketTransport` to connect to a game-server. Configure its URL for your own integration.
+
+The scene was authored in Unity 6000.4.9f1. Use that version or later for the scene, and install NativeWebSocket, Unity UI/TextMesh Pro, Input System and URP before importing. See the sample README for setup.
 
 ## Demo app
 
 A complete, UI-driven sample project is available at [`gamers-bet/gamers-unity-client-sdk-demo-app`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app). The repository includes:
 
-- A sample scene wired to `WebSocketTransport`, a demo-only `IGamersTransport` implementation that is not part of this package
+- A sample scene wired to `WebSocketTransport`, an `IGamersTransport` implementation included in the package sample
 - Prebuilt app packages for Windows, macOS, Android, and iOS
 - Step-by-step install and usage instructions
 
@@ -159,7 +161,7 @@ A complete, UI-driven sample project is available at [`gamers-bet/gamers-unity-c
 
 ### External dependency (demo only)
 
-The demo project's `WebSocketTransport` uses `com.endel.nativewebsocket` from GitHub. The `com.gamers.client` package does not require it. See the demo project [README](../README.md#external-dependency) for install instructions.
+The bundled sample requires NativeWebSocket, Unity UI/TextMesh Pro, Input System and URP. Install these before importing the sample; follow its README for exact setup. The runtime SDK only declares Newtonsoft.Json as a dependency.
 
 ## IL2CPP and Android
 

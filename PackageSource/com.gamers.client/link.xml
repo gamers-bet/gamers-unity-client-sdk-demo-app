@@ -1,0 +1,6 @@
+<linker>
+  <!-- Preserve the full Gamers client runtime so IL2CPP stripping does not remove
+       property setters on the Json.NET-serializable contracts and models. -->
+  <assembly fullname="GamersClient.Runtime" preserve="all" />
+  <assembly fullname="GamersClient.Samples" preserve="all" />
+</linker>
