@@ -4,7 +4,9 @@
     "references": [
         "GamersClient.Runtime",
         "Unity.Newtonsoft.Json",
-        "endel.nativewebsocket"
+        "endel.nativewebsocket",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

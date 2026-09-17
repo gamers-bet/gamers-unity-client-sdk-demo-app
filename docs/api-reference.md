@@ -17,6 +17,8 @@ The five `GamersClientFlow` operations return `Task<TReply>`. A task completes o
 
 Every outgoing message receives a unique `correlationId`. The game-server must copy that value and protocol version `1` into exactly one terminal reply. A reply with no outstanding correlation identifier is handled as an unsolicited server push.
 
+This includes late replies and duplicates whose original request is no longer pending. They cannot complete another pending request, but can still raise events and update shared flow state. Successful authentication pushes can set `State` to `Authenticated`; successful join pushes can update `State` and the corresponding current competition identifier. Error pushes can set `State` to `Error`. Filter unwanted duplicates and stale replies in your transport before raising `ReplyReceived`.
+
 ### Threading
 
 Create and call `GamersClientFlow` on Unity's main thread. `IGamersTransport.ReplyReceived` must also be raised on the main thread. A transport that receives data on another thread must marshal the callback to Unity's synchronization context first.
@@ -207,7 +209,7 @@ Serializes and sends a non-null message to the developer's game-server. The retu
 
 #### `ReplyReceived`
 
-Raise this event once for each deserialized game-server reply. Raise it on Unity's main thread. For request/reply traffic, preserve the outgoing `correlationId` and protocol version. A late duplicate cannot complete a newer pending request; any reply without an outstanding correlation identifier is handled as a server push.
+Raise this event once for each accepted, deserialized game-server reply, after filtering unwanted duplicates and stale replies. Raise it on Unity's main thread. For request/reply traffic, preserve the outgoing `correlationId` and protocol version. A late duplicate cannot complete a newer pending request; any reply without an outstanding correlation identifier is handled as a server push and may still raise events or change shared state, as described under [Awaitable operations](#awaitable-operations).
 
 ## 4. Error API
 
