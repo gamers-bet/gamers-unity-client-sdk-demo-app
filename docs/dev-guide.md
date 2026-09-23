@@ -51,12 +51,12 @@ We provide official SDKs to speed up game integration:
 
 Each has its own guide, and there is a fourth for the reference game-server that bridges the two:
 
-| Guide | Covers |
-|-------|--------|
-| [Unity Client SDK Guide](https://developer.gamers.dev/docs/client-sdk-guide) | Installing the UPM package, implementing `IGamersTransport`, driving `GamersClientFlow`, compatibility, limitations, and known issues |
-| [Unity Client C# API Reference](https://developer.gamers.dev/docs/client-sdk-api-reference) | Every public client type, member, parameter, return value, exception, event, enum, and wire field |
-| [Server SDK Guide](https://developer.gamers.dev/docs/server-sdk-guide) | The .NET and Java SDKs side by side — configuration, player token storage, calling the API, and error handling |
-| [Reference Game-Server Guide](https://developer.gamers.dev/docs/reference-server-guide) | Building and running the reference WebSocket bridge, and what must be replaced before you deploy anything based on it |
+| Guide                                                                                       | Covers |
+|---------------------------------------------------------------------------------------------|--------|
+| [Unity Client SDK Guide](integration-guide.md)                                              | Installing the UPM package, implementing `IGamersTransport`, driving `GamersClientFlow`, compatibility, limitations, and known issues |
+| [Unity Client C# API Reference](api-reference.md) | Every public client type, member, parameter, return value, exception, event, enum, and wire field |
+| [Server SDK Guide](server-sdk-guide.md)                                                     | The .NET and Java SDKs side by side — configuration, player token storage, calling the API, and error handling |
+| [Reference Game-Server Guide](reference-server-guide.md)                                    | Building and running the reference WebSocket bridge, and what must be replaced before you deploy anything based on it |
 
 A **TypeScript server SDK** is planned but not yet available.
 
@@ -1912,7 +1912,7 @@ Implement appropriate retry logic with exponential backoff for production integr
 
 For a complete and interactive list of all available endpoints, data models, and examples, please see our OpenAPI documentation, which is available in the `docs` section of the developer portal or can be accessed directly.
 
-[**View Full API Reference**](https://api.gamers.dev/docs)
+[**View Full API Reference**](https://developer.gamers.dev/docs)
 
 ## 9. Support and Resources
 
@@ -1922,7 +1922,7 @@ For a complete and interactive list of all available endpoints, data models, and
 
 ### Useful Links
 - [Developer Portal](https://developer.gamers.dev/)
-- [Interactive API Docs](https://api.gamers.dev/docs)
+- [Interactive API Docs](https://developer.gamers.dev/docs)
 
 ### Template Management
 - **Event templates**: Management (create, update, delete) is available through the **Developer Portal** or the Game API. The API provides full template CRUD plus event creation from templates.
@@ -1930,7 +1930,7 @@ For a complete and interactive list of all available endpoints, data models, and
 
 ## 10. Version History
 
-> For detailed endpoint-level API changes, see the [API Changelog](https://api.gamers.dev/docs/changelog).
+> For detailed endpoint-level API changes, see the [API Changelog](https://developer.gamers.dev/docs/changelog).
 
 ### 0.5.0 — 2026-08-06
 - ⚠️ **BREAKING CHANGE**: `PATCH /tournament/{tournamentId}/complete` on a tournament that is already `COMPLETED` returns `200` with the tournament's current state instead of `400 TOURNAMENT_CANNOT_CHANGE_STATUS`, so a retry converges. Other invalid transitions still return `400`. Do not trigger post-completion work solely on this call returning `200` — see [Step 8](#step-8-complete-the-tournament-at-end-date).
