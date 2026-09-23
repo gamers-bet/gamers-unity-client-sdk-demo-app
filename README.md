@@ -62,8 +62,6 @@ See the [sample README](Assets/Samples/Gamers%20Client%20Helper/1.0.0/Reference%
 
 Open the project in Unity, load the sample scene, and use the on-screen inputs to interact with the Gamers integration. The `ReferenceIntegration` component communicates with the backend through this demo's `WebSocketTransport`.
 
-> **Note for reviewers:** This demo is preconfigured to connect to a hosted test server (`wss://reference-server-dev-internal-testing.up.railway.app/ws/gamers`) provided for evaluation purposes. In a production integration, set the `Url` field on the `WebSocketTransport` component to your own game-server WebSocket endpoint.
-
 ## Installation & Getting Started
 
 1. Add the [`com.gamers.client`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app/raw/main/com.gamers.client-1.0.0.tgz) package to your Unity project via Package Manager (`Window > Package Manager > Add package from tarball...`).
