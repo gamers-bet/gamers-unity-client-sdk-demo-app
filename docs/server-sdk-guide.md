@@ -3,9 +3,9 @@ Version 1.0.0
 
 The Server SDKs wrap the Game API for code running on **your** servers. Both are a hand-written façade over a client generated from the same OpenAPI document that powers the API reference, so every endpoint in the spec is reachable, and both add what you would otherwise hand-roll: auth headers, API versioning, retry with backoff, idempotency keys, and typed errors.
 
-Companion documents: [Developer Guide](https://developer.gamers.dev/docs/dev-guide) · [Unity Client SDK Guide](https://developer.gamers.dev/docs/client-sdk-guide) · [Reference Game-Server Guide](https://developer.gamers.dev/docs/reference-server-guide)
+Companion documents: [Developer Guide](dev-guide.md) · [Unity Client SDK Guide](integration-guide.md) · [Reference Game-Server Guide](reference-server-guide.md)
 
-> These SDKs hold your API key. They must never be shipped inside a game client. Clients talk to your server — see the [Unity Client SDK Guide](https://developer.gamers.dev/docs/client-sdk-guide).
+> These SDKs hold your API key. They must never be shipped inside a game client. Clients talk to your server — see the [Unity Client SDK Guide](integration-guide.md).
 
 ## 1. Which credentials go where
 
@@ -278,7 +278,7 @@ A tournament that no longer exists for your game surfaces as `GamersSdkException
 
 ## 11. Common error codes
 
-Branch on the code, not the message. The full list is in the [OpenAPI document](https://api.gamers.dev/docs/openapi); these are the ones you will actually hit:
+Branch on the code, not the message. The full list is in the [OpenAPI document](https://developer.gamers.dev/docs/openapi); these are the ones you will actually hit:
 
 | Code | Meaning | Usual response |
 |---|---|---|
@@ -297,7 +297,7 @@ Branch on the code, not the message. The full list is in the [OpenAPI document](
 
 ## 12. Operational notes
 
-- **Idempotency.** The API caches only successful `2xx` responses per key, for 24 hours. A `4xx`/`5xx` releases the key, so a retry re-executes rather than replaying a failure. A replayed response carries an `Idempotency-Key` **response** header; a first execution does not. `POST /auth/request` and `POST /auth/verify` accept the header and deliberately ignore it. See [Idempotency](https://api.gamers.dev/docs/dev-guide#idempotency) in the Developer Guide.
+- **Idempotency.** The API caches only successful `2xx` responses per key, for 24 hours. A `4xx`/`5xx` releases the key, so a retry re-executes rather than replaying a failure. A replayed response carries an `Idempotency-Key` **response** header; a first execution does not. `POST /auth/request` and `POST /auth/verify` accept the header and deliberately ignore it. See [Idempotency](dev-guide.md#idempotency) in the Developer Guide.
 - **Rate limits.** 1,000 requests per minute **per IP**. One game-server behind one egress IP shares that budget across all its players.
 - **Currency.** All monetary values are USD to 2 decimal places — `decimal` in .NET, `BigDecimal` in Java. Never use floating point.
 - **Prize distribution is asynchronous.** The API returns before payouts settle. Do not extend timeouts waiting for them.
