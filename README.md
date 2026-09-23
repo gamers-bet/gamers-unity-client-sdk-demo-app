@@ -7,6 +7,9 @@ A Unity sample project demonstrating how to integrate the Gamers client SDK.
 - [Client guide](docs/client-guide.md) — package overview, architecture, requirements
 - [Integration guide](docs/integration-guide.md) — canonical integration walkthrough
 - [C# API reference](docs/api-reference.md) — every public type, event, and enum
+- [Reference server guide](docs/reference-server-guide.md) — reference server setup and usage
+- [Server SDK guide](docs/server-sdk-guide.md) — server-side SDK integration
+- [Dev guide](docs/dev-guide.md) — development workflow and setup
 - [Verified Solutions attribution](docs/unity-verified-solutions-attribution.md)
 
 ## Overview
