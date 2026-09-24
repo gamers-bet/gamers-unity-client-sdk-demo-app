@@ -5,7 +5,7 @@ The reference game-server is a minimal Spring Boot WebSocket application that br
 
 It is a reference implementation, not a supported product, and not a starting point you can deploy. [§6](#6-what-you-must-replace) lists what you have to replace first — read it before you build on this.
 
-Source: `sdks/reference-server`. Companion documents: [Developer Guide](dev-guide.md) · [Unity Client SDK Guide](integration-guide.md) · [Server SDK Guide](reference-server-guide.md)
+Source: `sdks/reference-server`. Companion documents: [Developer Guide](dev-guide.md) · [Unity Client SDK Guide](integration-guide.md) · [Server SDK Guide](server-sdk-guide.md)
 
 ## 1. Where it sits
 
