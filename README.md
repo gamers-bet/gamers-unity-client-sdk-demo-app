@@ -36,7 +36,7 @@ The SDK is designed for Unity projects that integrate with the Gamers.bet platfo
 
 ## Network Transport
 
-The demo uses **`WebSocketTransport`** as its concrete `IGamersTransport` implementation. It is bundled in the main package’s **Reference Integration** sample, under `Scripts/`, and handles:
+The demo uses **`WebSocketTransport`** as its concrete `IGamersTransport` implementation. It is part of this demo project, under `Assets/Samples/Gamers Client Helper/1.0.0/Reference Integration/Scripts/`; it is not included in the `com.gamers.client` package. It handles:
 
 - WebSocket connection to the Gamers backend (`wss://.../ws/gamers`)
 - JSON message serialization and deserialization
@@ -51,15 +51,17 @@ The WebSocket transport uses `com.endel.nativewebsocket` from GitHub. Install it
 https://github.com/endel/NativeWebSocket.git#upm
 ```
 
-The runtime SDK does not require NativeWebSocket; install it before importing the complete Reference Integration sample. See [docs/client-guide.md](docs/client-guide.md#external-dependency-demo-only) for details.
+The runtime SDK does not require NativeWebSocket; install it before opening this demo or copying `WebSocketTransport` into another project. See [docs/client-guide.md](docs/client-guide.md#external-dependency-demo-only) for details.
 
 ### Relationship to the packaged sample
 
-The main package ships the complete **Reference Integration** sample: scene, UI scripts, WebSocket transport, logo, input actions and required font resources. `ReferenceTransport` remains available for mock examples; the included scene uses `WebSocketTransport`.
+The SDK is supplied as `com.gamers.client-1.0.0.tgz`, which includes its C# source, documentation, and a small **Reference Integration** sample: `ReferenceIntegration.cs`, the mock `ReferenceTransport.cs` and an assembly definition. The package sample has no scene and no WebSocket transport.
 
-The editable demo lives at `Assets/Samples/Gamers Client Helper/1.0.0/Reference Integration/`. The SDK is supplied as `com.gamers.client-1.0.0.tgz`, which includes its C# source, documentation, and Reference Integration sample. This repository does not include package build tooling. Reimporting the sample restores the version bundled in the tarball and can overwrite local sample edits.
+The full demo lives only in this repository, at `Assets/Samples/Gamers Client Helper/1.0.0/Reference Integration/`. It extends the package sample with the scene, `WebSocketTransport`, the other UI scripts, logo, input actions, URP settings and font resources. This repository does not include package build tooling.
 
-See the [sample README](Assets/Samples/Gamers%20Client%20Helper/1.0.0/Reference%20Integration/README.md) for dependency setup. The SDK retains its Unity 2022.3 minimum; the bundled scene was authored in Unity 6000.4.9f1.
+Do not reimport the sample from Package Manager over this folder. The import only brings the package's small sample, can overwrite or duplicate the scripts here, and does not restore the scene or `WebSocketTransport`.
+
+See the [sample README](Assets/Samples/Gamers%20Client%20Helper/1.0.0/Reference%20Integration/README.md) for dependency setup. The SDK retains its Unity 2022.3 minimum; the demo scene was authored in Unity 6000.4.9f1.
 
 ## Usage
 
@@ -70,7 +72,7 @@ Open the project in Unity, load the sample scene, and use the on-screen inputs t
 ## Installation & Getting Started
 
 1. Add the [`com.gamers.client`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app/raw/main/com.gamers.client-1.0.0.tgz) package to your Unity project via Package Manager (`Window > Package Manager > Add package from tarball...`).
-2. Provide an `IGamersTransport` implementation — write your own, or copy this demo's `WebSocketTransport` and set its `Url` and optional `Player Id Header` in the Inspector. The package sample includes this same WebSocket transport and also provides `ReferenceTransport` for mock examples.
+2. Provide an `IGamersTransport` implementation — write your own, or copy this demo's `WebSocketTransport` and set its `Url` and optional `Player Id Header` in the Inspector. The package sample does not include `WebSocketTransport`; it only provides the mock `ReferenceTransport`.
 3. Create a `GamersClientFlow` with the transport, optionally setting `RequestTimeout`.
 4. Subscribe to the flow events (`OnAuthCodeRequested`, `OnAuthenticated`, `OnTournamentJoined`, `OnEventJoined`, `OnLeaderboardUpdated`, `OnError`) and call the async methods (`RequestAuthAsync`, `SubmitCodeAsync`, `JoinTournamentAsync`, `JoinEventAsync`, `RequestLeaderboardAsync`).
 5. The `ReferenceIntegration` component from the package sample is a MonoBehaviour that demonstrates this setup in `Start`.

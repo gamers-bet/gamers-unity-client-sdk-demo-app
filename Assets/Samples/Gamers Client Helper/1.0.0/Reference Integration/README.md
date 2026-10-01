@@ -1,15 +1,20 @@
 # Reference Integration
 
-This sample includes the complete UI demo: scripts, scene, logo, input actions,
-and the TextMesh Pro font resources used by the scene. All sample scripts use
-the `Gamers.Client.Samples` namespace.
+This folder is the complete UI demo for this project: scripts, scene, logo,
+input actions, URP settings and the TextMesh Pro font resources used by the
+scene. All sample scripts use the `Gamers.Client.Samples` namespace.
+
+It extends the **Reference Integration** sample shipped in `com.gamers.client`.
+The package sample contains only `ReferenceIntegration.cs`, the mock
+`ReferenceTransport.cs` and an assembly definition. The scene,
+`WebSocketTransport` and the other files here exist only in this demo project.
 
 ## Setup
 
-The SDK supports Unity 2022.3 or later. The bundled scene was authored in Unity
+The SDK supports Unity 2022.3 or later. The scene was authored in Unity
 6000.4.9f1; use that version or later for this URP scene.
 
-Before importing the sample, install these sample-only dependencies:
+Install these demo-only dependencies before opening the scene:
 
 - NativeWebSocket: Package Manager > Add package from git URL:
   `https://github.com/endel/NativeWebSocket.git#ea014c9ae534d56111962d96f89f8a046e302dc9`
@@ -21,25 +26,27 @@ The SDK installs Newtonsoft.Json through its declared package dependency.
 Enable the Input System under Project Settings > Player > Active Input Handling
 (Input System Package or Both), restarting the Editor if requested.
 
-1. Select Gamers Client Helper in Package Manager and import Reference Integration.
-2. Open `Scenes/SampleScene.unity` under the imported sample folder.
+1. Open `Scenes/SampleScene.unity` in this folder.
    Use a URP project, or assign the included `Settings/UniversalRP.asset` in
    Project Settings > Graphics and the applicable Quality levels.
-3. Inspect the `WebSocketTransport` component. The scene uses the hosted evaluation
+2. Inspect the `WebSocketTransport` component. The scene uses the hosted evaluation
    endpoint; replace its URL with your game-server endpoint for your integration.
-4. Enter Play mode and use the authentication, join, and leaderboard buttons.
+3. Enter Play mode and use the authentication, join, and leaderboard buttons.
 
 `ReferenceTransport` is also included as a mock transport for standalone code
-examples. The supplied scene uses `WebSocketTransport` for live server replies.
+examples. The scene uses `WebSocketTransport` for live server replies.
 
 The included Text resources are the scene's required subset of TMP Essentials.
 Their metadata is preserved. If your project already has TMP Essentials, retain
-one copy of each asset/GUID when importing. The Liberation Sans license is in
+one copy of each asset/GUID when copying this folder. The Liberation Sans license is in
 `Text/Fonts/LiberationSans - OFL.txt`.
 
-## Editing the sample
+## Editing the demo
 
-Edit the imported sample in your project's `Assets` folder. Keep every asset's
-`.meta` file when moving it so scene and button references survive. These edits
-do not modify the SDK tarball. Reimporting the sample restores the bundled
-version and can overwrite local edits; preserve your changes before reimporting.
+Edit the files in this folder directly. Keep every asset's `.meta` file when
+moving or copying it so scene and button references survive. To use the demo in
+another project, copy the whole folder with its `.meta` files.
+
+Do not reimport the sample from Package Manager over this folder. The import only
+brings the package's small sample, can overwrite or duplicate the scripts here,
+and does not restore the scene or `WebSocketTransport`.
