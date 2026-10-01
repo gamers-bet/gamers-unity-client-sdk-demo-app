@@ -11,7 +11,7 @@ namespace Gamers.Client.Samples
     public class WebSocketTransport : MonoBehaviour, IGamersTransport
     {
         // Replace this with your own game-server WebSocket URL.
-        [SerializeField] private string _url = "wss://reference-server-dev-internal-testing.up.railway.app/ws/gamers";
+        [SerializeField] private string _url = "wss://reference-server.up.railway.app/ws/gamers";
         [SerializeField] private string _playerIdHeader;
 
         public event Action<GamersServerReply> ReplyReceived;
