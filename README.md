@@ -55,7 +55,7 @@ The runtime SDK does not require NativeWebSocket; install it before opening this
 
 ### Relationship to the packaged sample
 
-The SDK is supplied as `com.gamers.client-1.0.0.tgz`, which includes its C# source, documentation, and a small **Reference Integration** sample: `ReferenceIntegration.cs`, the mock `ReferenceTransport.cs` and an assembly definition. The package sample has no scene and no WebSocket transport.
+The SDK is supplied as `com.gamers.client-1.0.1.tgz`, which includes its C# source, documentation, and a small **Reference Integration** sample: `ReferenceIntegration.cs`, the mock `ReferenceTransport.cs` and an assembly definition. The package sample has no scene and no WebSocket transport.
 
 The full demo lives only in this repository, at `Assets/Samples/Gamers Client Helper/1.0.0/Reference Integration/`. It extends the package sample with the scene, `WebSocketTransport`, the other UI scripts, logo, input actions, URP settings and font resources. This repository does not include package build tooling.
 
@@ -71,7 +71,7 @@ Open the project in Unity, load the sample scene, and use the on-screen inputs t
 
 ## Installation & Getting Started
 
-1. Add the [`com.gamers.client`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app/raw/main/com.gamers.client-1.0.0.tgz) package to your Unity project via Package Manager (`Window > Package Manager > Add package from tarball...`).
+1. Add the [`com.gamers.client`](https://github.com/gamers-bet/gamers-unity-client-sdk-demo-app/raw/main/com.gamers.client-1.0.1.tgz) package to your Unity project via Package Manager (`Window > Package Manager > Add package from tarball...`).
 2. Provide an `IGamersTransport` implementation — write your own, or copy this demo's `WebSocketTransport` and set its `Url` and optional `Player Id Header` in the Inspector. The package sample does not include `WebSocketTransport`; it only provides the mock `ReferenceTransport`.
 3. Create a `GamersClientFlow` with the transport, optionally setting `RequestTimeout`.
 4. Subscribe to the flow events (`OnAuthCodeRequested`, `OnAuthenticated`, `OnTournamentJoined`, `OnEventJoined`, `OnLeaderboardUpdated`, `OnError`) and call the async methods (`RequestAuthAsync`, `SubmitCodeAsync`, `JoinTournamentAsync`, `JoinEventAsync`, `RequestLeaderboardAsync`).

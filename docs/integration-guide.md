@@ -1,7 +1,7 @@
 # Gamers Client Integration Guide
 
 Package: `com.gamers.client`<br>
-Current package version: `1.0.0`<br>
+Current package version: `1.0.1`<br>
 Client-to-server protocol version: `1`
 
 The **Gamers Client Helper** is a transport-agnostic Unity package for a server-authoritative Gamers integration. It provides five awaitable player operations, typed message contracts, a state machine, error handling, and read-only display models.
