@@ -60,7 +60,17 @@ Each has its own guide, and there is a fourth for the reference game-server that
 
 A **TypeScript server SDK** is planned but not yet available.
 
-> **Distribution:** the SDKs are not yet published to any public package registry. Registered developers receive them directly from us, along with a reference game-server implementation and integration documentation. Do not expect to resolve them from NuGet, Maven Central, or npm.
+**Server SDK distribution**
+
+The .NET and Java Server SDKs are supplied directly by Gamers.bet as ZIP files.
+
+To obtain a Server SDK:
+
+1. You must have a Gamers.bet developer account. If you do not already have one, sign up at https://developer.gamers.dev/signup.
+2. Send an email to [tech@gamers.bet](mailto:tech@gamers.bet) from the same email address you use to access the developer portal.
+3. State whether you are requesting the .NET Server SDK or the Java Server SDK.
+
+Gamers.bet will send the requested SDK ZIP file to that email address. Extract the ZIP file, then follow the build and integration instructions in the [Server SDK Guide](server-sdk-guide.md).
 
 The **.NET Server SDK** sends `X-API-KEY`, `X-API-Version`, `X-Request-ID`, and `Idempotency-Key` on write requests.
 

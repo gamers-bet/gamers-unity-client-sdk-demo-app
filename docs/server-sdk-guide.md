@@ -18,7 +18,15 @@ Player JWTs come from the two-step email flow (`POST /auth/request` → `POST /a
 
 ## 2. Distribution
 
-Neither SDK is published to a public registry. Build from source.
+The .NET and Java Server SDKs are supplied directly by Gamers.bet as ZIP files.
+
+To obtain a Server SDK:
+
+1. You must have a Gamers.bet developer account. If you do not already have one, sign up at https://developer.gamers.dev/signup.
+2. Send an email to [tech@gamers.bet](mailto:tech@gamers.bet) from the same email address you use to access the developer portal.
+3. State whether you are requesting the .NET Server SDK or the Java Server SDK.
+
+Gamers.bet will send the requested SDK ZIP file to that email address. Extract the ZIP file, then follow the build and integration instructions below.
 
 | | .NET | Java |
 |---|---|---|
