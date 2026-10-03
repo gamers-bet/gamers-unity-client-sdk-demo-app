@@ -7,6 +7,7 @@
 #
 .DS_Store
 *.tgz
+!com.gamers.client-*.tgz
 *.zip
 .utmp/
 /[Ll]ibrary/
