@@ -1584,7 +1584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ee37562fa72493989be1ea648b8e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: GamersClient.Samples::Gamers.Client.Samples.WebSocketTransport
-  _url: wss://reference-server.up.railway.app/ws/gamers
+  _url: wss://reference-server.gamers.dev/ws/gamers
   _playerIdHeader: 
 --- !u!1 &739824828
 GameObject:
